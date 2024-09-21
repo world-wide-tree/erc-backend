@@ -6,9 +6,11 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.89"
 axum = "0.7.6"
+chrono = "0.4.38"
 dotenv = "0.15.0"
 serde = { version = "1.0.210", features = ["derive"] }
 tokio = { version = "1.40.0", features = ["full"] }
 tower-http = { version = "0.6.0", features = ["full", "trace"] }
 utoipa = { version = "4.2.3", features = ["axum_extras"] }
+utoipa-rapidoc = { version = "4.0.0", features = ["axum"] }
 utoipa-swagger-ui = { version = "7.1.0", features = ["axum"] }
