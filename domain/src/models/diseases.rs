@@ -11,12 +11,30 @@ pub struct DieseasModel{
     pub updated_at: Option<DateTime<Utc>>,
 }
 #[derive(Debug, Clone)]
+pub struct CreateDieaseasDto{
+    pub name: String,
+    pub descriptions: String,
+}
+#[derive(Debug, Clone)]
+pub struct UpdateDieaseasDto{
+    pub name: String,
+    pub descriptions: String,
+}
+#[derive(Debug, Clone)]
 pub struct SpecializationModel{
     pub id: String,
     pub name: String,
 }
 #[derive(Debug, Clone)]
-pub struct MedicalHistoriesDb{
+pub struct CreateSpecializationDto{
+    pub name: String,
+}
+#[derive(Debug, Clone)]
+pub struct UpdateSpecializationDto{
+    pub name: String,
+}
+#[derive(Debug, Clone)]
+pub struct MedicalHistoriesModel{
     pub id: String,
     pub erc: ErcModel,                        // TODO: Replace to ErcModel
     pub dieseases: DieseasModel,

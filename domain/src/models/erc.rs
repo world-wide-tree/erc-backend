@@ -9,3 +9,11 @@ pub struct ErcModel{
     pub created_at: DateTime<Utc>,
     pub updated_at: Option<DateTime<Utc>>,
 }
+#[derive(Debug, Clone)]
+pub struct CreateErcDto{
+    pub patient: String,
+}
+#[derive(Debug, Clone)]
+pub struct UpdateErcDto{
+    pub patient: String,
+}

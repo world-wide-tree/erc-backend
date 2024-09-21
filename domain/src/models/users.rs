@@ -19,3 +19,26 @@ pub enum Gender {
     Male,
     Female    
 }
+
+#[derive(Debug, Clone)]
+pub struct CreateUserDto{
+    pub name: String,
+    pub password: String,
+    pub first_name: String,
+    pub last_name: String,
+    pub dob: DateTime<Utc>,         
+    pub gender: Gender,
+    pub role: String,               
+    pub phone_number: String,
+}
+#[derive(Debug, Clone)]
+pub struct UpdateUserDto{
+    pub name: String,
+    pub password: String,
+    pub first_name: String,
+    pub last_name: String,
+    pub dob: DateTime<Utc>,         
+    pub gender: Gender,
+    pub role: String,               
+    pub phone_number: String,
+}
