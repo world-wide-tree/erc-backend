@@ -12,7 +12,7 @@ pub struct DieseasesDb{
 }
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SpecializationsDb{
-    id: String,
+    id: Thing,
     name: String,
 }
 #[derive(Debug, Clone, Serialize, Deserialize)]

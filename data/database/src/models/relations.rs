@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use surrealdb::sql::Thing;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct HasEcrDbRelation{
+pub struct HasErcDbRelation{
     id: Thing,
     patient: Thing,
     erc: Thing,
