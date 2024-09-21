@@ -1,0 +1,13 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.89"
+axum = "0.7.6"
+dotenv = "0.15.0"
+serde = { version = "1.0.210", features = ["derive"] }
+tower-http = { version = "0.6.0", features = ["full", "trace"] }
+utoipa = { version = "4.2.3", features = ["axum_extras"] }
+utoipa-swagger-ui = { version = "7.1.0", features = ["axum"] }
