@@ -36,8 +36,8 @@ pub struct UpdateSpecializationDto{
 #[derive(Debug, Clone)]
 pub struct MedicalHistoriesModel{
     pub id: String,
-    pub erc: ErcModel,                        // TODO: Replace to ErcModel
-    pub dieseases: DieseasModel,
+    pub erc: String,                        // TODO: Replace to ErcModel
+    pub dieseases: String,
     pub description: String,
     pub start_data: DateTime<Utc>,
     pub end_data: Option<DateTime<Utc>>,

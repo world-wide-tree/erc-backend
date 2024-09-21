@@ -12,6 +12,8 @@ pub const ERC_TABLE: &'static str = "Ercs";
 pub const DOCTOR_TABLE: &'static str = "Doctors";
 pub const PATIENT_TABLE: &'static str = "Patients";
 pub const SPECIALIZATION_TABLE: &'static str = "Specializations";
+pub const MEDICAL_HISTORIES_TABLE: &'static str = "MedicalHistories";
+pub const ROLES_TABLE: &'static str = "Roles";
 
 pub const HAS_ERC_RELETION: &'static str = "HasErcRelation";
 pub const VISITS_RELETION: &'static str = "VisitsRelation";

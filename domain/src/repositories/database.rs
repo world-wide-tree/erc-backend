@@ -27,7 +27,7 @@ pub trait DbClinicsRepositories{
     async fn create_patient(&self, dto: CreatePatientDto) -> Result<PatientModel>;
     async fn get_patient(&self, id: String) -> Result<PatientModel>;
     async fn list_patient(&self, ) -> Result<Vec<PatientModel>>;
-    async fn update_patient(&self, id: String, dto: UpdatePatientDto) -> Result<ClinicModel>;
+    async fn update_patient(&self, id: String, dto: UpdatePatientDto) -> Result<PatientModel>;
     async fn delete_patient(&self, id: String) -> Result<()>;
 
     async fn create_doctor(&self, dto: CreateDoctorDto) -> Result<DoctorModel>;
@@ -56,7 +56,7 @@ pub trait DbErcRepositories{
     async fn get_erc(&self, id: String) -> Result<ErcModel>;
     async fn list_erc(&self, ) -> Result<Vec<ErcModel>>;
     async fn update_erc(&self, id: String, dto: UpdateErcDto) -> Result<ErcModel>;
-    async fn delete_erc(&self, id: String) -> Result<ErcModel>;
+    async fn delete_erc(&self, id: String) -> Result<()>;
 }
 #[async_trait::async_trait]
 pub trait DbUsersRepositories{

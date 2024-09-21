@@ -5,7 +5,7 @@ use super::clinics::PatientModel;
 #[derive(Debug, Clone)]
 pub struct ErcModel{
     pub id: String,
-    pub patient: PatientModel,
+    pub patient: String,
     pub created_at: DateTime<Utc>,
     pub updated_at: Option<DateTime<Utc>>,
 }

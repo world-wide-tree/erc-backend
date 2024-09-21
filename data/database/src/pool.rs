@@ -26,4 +26,7 @@ impl DbClient{
         db.use_ns(db_namespace).use_db(db_database).await?;
         Ok(Self { pool: db })
     }
+    pub fn get(&self) -> &Surreal<Client>{
+        &self.pool
+    }
 }
