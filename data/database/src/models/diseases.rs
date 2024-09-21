@@ -11,9 +11,27 @@ pub struct DieseasesDb{
     updated_at: Option<DateTime<Utc>>,
 }
 #[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CreateDieaseasDb{
+    pub name: String,
+    pub descriptions: String,
+}
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct UpdateDieaseasDb{
+    pub name: String,
+    pub descriptions: String,
+}
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SpecializationsDb{
     id: Thing,
     name: String,
+}
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CreateSpecializationDb{
+    pub name: String,
+}
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct UpdateSpecializationDb{
+    pub name: String,
 }
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct MedicalHistoriesDb{

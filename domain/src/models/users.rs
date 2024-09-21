@@ -34,7 +34,6 @@ pub struct CreateUserDto{
 #[derive(Debug, Clone)]
 pub struct UpdateUserDto{
     pub name: String,
-    pub password: String,
     pub first_name: String,
     pub last_name: String,
     pub dob: DateTime<Utc>,         

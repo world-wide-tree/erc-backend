@@ -28,3 +28,24 @@ pub enum GenderDb {
     Male,
     Female    
 }
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CreateUserDb{
+    pub name: String,
+    pub password_hash: String,
+    pub first_name: String,
+    pub last_name: String,
+    pub dob: DateTime<Utc>,         
+    pub gender: GenderDb,
+    pub role: Thing,               
+    pub phone_number: String,
+}
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct UpdateUserDb{
+    pub name: String,
+    pub first_name: String,
+    pub last_name: String,
+    pub dob: DateTime<Utc>,         
+    pub gender: GenderDb,
+    pub role: Thing,               
+    pub phone_number: String,
+}

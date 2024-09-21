@@ -9,3 +9,11 @@ pub struct ErcDb{
     created_at: DateTime<Utc>,
     updated_at: DateTime<Utc>,
 }
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CreateErcDb{
+    pub patient: Thing,
+}
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct UpdateErcDb{
+    pub patient: Thing,
+}
