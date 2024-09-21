@@ -9,3 +9,5 @@ chrono = "0.4.38"
 dotenv = "0.15.0"
 serde = { version = "1.0.210", features = ["derive"] }
 surrealdb = "2.0.1"
+domain = { path = "../../domain" }
+async-trait = "0.1.82"

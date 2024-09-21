@@ -1,6 +1,9 @@
-use axum::{response::IntoResponse, routing::{delete, get, post, put}, Router};
+use std::sync::Arc;
 
-pub fn user_routes() -> Router{
+use axum::{response::IntoResponse, routing::{delete, get, post, put}, Router};
+use domain::services::AppServices;
+
+pub fn user_routes(state: Arc<AppServices>) -> Router{
     Router::new()
         .route("/users", post(post_users_handler))
         .route("/users", get(list_users_handler))

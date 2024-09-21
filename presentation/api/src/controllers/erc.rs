@@ -1,6 +1,9 @@
-use axum::{response::IntoResponse, routing::{delete, get, post, put}, Router};
+use std::sync::Arc;
 
-pub fn ecr_routes() -> Router{
+use axum::{response::IntoResponse, routing::{delete, get, post, put}, Router};
+use domain::services::AppServices;
+
+pub fn ecr_routes(state: Arc<AppServices>) -> Router{
     Router::new()
         .route("/ecr", post(post_ecr_handler))
         .route("/ecr", get(list_ecr_handler))

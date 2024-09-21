@@ -2,7 +2,7 @@ use std::sync::Arc;
 
 use anyhow::Result;
 
-use crate::models::{clinics::{ClinicModel, CreateClinicDto, CreateDoctorDto, CreatePatientDto, DoctorModel, PatientModel, UpdateClinicDto, UpdateDoctorDto, UpdatePatientDto}, diseases::{CreateDieaseasDto, CreateSpecializationDto, DieseasModel, UpdateDieaseasDto, UpdateSpecializationDto}, erc::{CreateErcDto, ErcModel, UpdateErcDto}, users::{CreateUserDto, UpdateUserDto, UserModel}};
+use crate::models::{clinics::{ClinicModel, CreateClinicDto, CreateDoctorDto, CreatePatientDto, DoctorModel, PatientModel, UpdateClinicDto, UpdateDoctorDto, UpdatePatientDto}, diseases::{CreateDieaseasDto, CreateSpecializationDto, DieseasModel, SpecializationModel, UpdateDieaseasDto, UpdateSpecializationDto}, erc::{CreateErcDto, ErcModel, UpdateErcDto}, users::{CreateUserDto, UpdateUserDto, UserModel}};
 
 
 pub type DatabaseRepo = Arc<Box<dyn DatabaseRepositories>>;
@@ -44,10 +44,10 @@ pub trait DbDiseasesRepositories{
     async fn update_diseases(&self, id: String, dto: UpdateDieaseasDto) -> Result<DieseasModel>;
     async fn delete_diseases(&self, id: String) -> Result<()>;
 
-    async fn create_specialization(&self, dto: CreateSpecializationDto) -> Result<DieseasModel>;
-    async fn get_specialization(&self, id: String) -> Result<DieseasModel>;
-    async fn list_specialization(&self, ) -> Result<Vec<DieseasModel>>;
-    async fn update_specialization(&self, id: String, dto: UpdateSpecializationDto) -> Result<DieseasModel>;
+    async fn create_specialization(&self, dto: CreateSpecializationDto) -> Result<SpecializationModel>;
+    async fn get_specialization(&self, id: String) -> Result<SpecializationModel>;
+    async fn list_specialization(&self, ) -> Result<Vec<SpecializationModel>>;
+    async fn update_specialization(&self, id: String, dto: UpdateSpecializationDto) -> Result<SpecializationModel>;
     async fn delete_specialization(&self, id: String) -> Result<()>;
 }
 #[async_trait::async_trait]

@@ -1,6 +1,9 @@
-use axum::{response::IntoResponse, routing::{delete, get, post, put}, Router};
+use std::sync::Arc;
 
-pub fn clinics_routes() -> Router{
+use axum::{response::IntoResponse, routing::{delete, get, post, put}, Router};
+use domain::services::AppServices;
+
+pub fn clinics_routes(state: Arc<AppServices>) -> Router{
     Router::new()
         .route("/clinics", post(post_clinics_handler))
         .route("/clinics", get(list_clinics_handler))
@@ -75,7 +78,7 @@ pub async fn delete_clinics_handler(
 }
 
 
-pub fn doctors_routes() -> Router{
+pub fn doctors_routes(state: Arc<AppServices>) -> Router{
     Router::new()
         .route("/doctors", post(post_doctors_handler))
         .route("/doctors", get(list_doctors_handler))
@@ -151,7 +154,7 @@ pub async fn delete_doctors_handler(
 
 
 
-pub fn patients_routes() -> Router{
+pub fn patients_routes(state: Arc<AppServices>) -> Router{
     Router::new()
         .route("/patients", post(post_patients_handler))
         .route("/patients", get(list_patients_handler))

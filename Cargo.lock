@@ -137,6 +137,7 @@ dependencies = [
  "anyhow",
  "axum",
  "chrono",
+ "domain",
  "dotenv",
  "serde",
  "tokio",
@@ -913,7 +914,9 @@ name = "database"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "async-trait",
  "chrono",
+ "domain",
  "dotenv",
  "serde",
  "surrealdb",

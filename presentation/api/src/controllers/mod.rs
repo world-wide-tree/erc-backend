@@ -1,4 +1,7 @@
+use std::sync::Arc;
+
 use axum::{routing::get, Router};
+use domain::services::AppServices;
 use utoipa::{openapi, OpenApi};
 
 
@@ -22,14 +25,14 @@ use super::models::{
     users::*,
 };
 
-pub fn app_routes() -> Router{
+pub fn app_routes(state: Arc<AppServices>) -> Router{
     Router::new()
         .route("/", get("handler"))
-        .merge(user_routes())
-        .merge(clinics_routes())
-        .merge(doctors_routes())
-        .merge(patients_routes())
-        .merge(ecr_routes())
+        .merge(user_routes(state.clone()))
+        .merge(clinics_routes(state.clone()))
+        .merge(doctors_routes(state.clone()))
+        .merge(patients_routes(state.clone()))
+        .merge(ecr_routes(state.clone()))
         .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ErcOpenApi::openapi()))
         .merge(RapiDoc::new("/api-docs/openapi.json").path("/rapidoc"))
 }
