@@ -10,6 +10,7 @@ pub fn ecr_routes(state: Arc<AppServices>) -> Router{
         .route("/ecr/:id", get(get_ecr_handler))
         .route("/ecr/:id", put(put_ecr_handler))
         .route("/ecr/:id", delete(delete_ecr_handler))
+        .with_state(state)
 }
 #[utoipa::path(
     tag = "",
@@ -20,7 +21,7 @@ pub fn ecr_routes(state: Arc<AppServices>) -> Router{
     )
 )]
 pub async fn post_ecr_handler(
-
+    
 ) -> impl IntoResponse{
     ""
 }

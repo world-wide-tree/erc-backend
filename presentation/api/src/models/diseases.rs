@@ -93,3 +93,14 @@ impl Into<CreateSpecializationDto> for PostSpecializationApiDto{
         }
     }
 }
+impl From<DieseasModel> for DieseasApiDto {
+    fn from(value: DieseasModel) -> Self {
+        Self { 
+            id: value.id, 
+            name: value.name, 
+            descriptions: value.descriptions, 
+            created_at: value.created_at, 
+            updated_at: value.updated_at 
+        }
+    }
+}
