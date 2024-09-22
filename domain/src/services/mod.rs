@@ -17,6 +17,9 @@ pub struct AppServices{
     diseases: Arc<DieseasService>,
     erc: Arc<ErcService>,
 }
+unsafe impl Send for AppServices{}
+
+unsafe impl Sync for AppServices{}
 
 impl AppServices{
     pub fn init(db_repo: DatabaseRepo) -> Self{

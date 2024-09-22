@@ -13,11 +13,12 @@ pub trait DatabaseRepositories:
     DbClinicsRepositories + 
     DbDiseasesRepositories + 
     DbErcRepositories + 
-    DbUsersRepositories
+    DbUsersRepositories +
+    Send + Sync
 {}
 
 #[async_trait::async_trait]
-pub trait DbClinicsRepositories{
+pub trait DbClinicsRepositories: Send + Sync{
     async fn create_clinic(&self, dto: CreateClinicDto) -> Result<ClinicModel>;
     async fn get_clinic(&self, id: String) -> Result<ClinicModel>;
     async fn list_clinic(&self, ) -> Result<Vec<ClinicModel>>;
@@ -37,7 +38,7 @@ pub trait DbClinicsRepositories{
     async fn delete_doctor(&self, id: String) -> Result<()>;
 }
 #[async_trait::async_trait]
-pub trait DbDiseasesRepositories{
+pub trait DbDiseasesRepositories: Send + Sync{
     async fn create_diseases(&self, dto: CreateDieaseasDto) -> Result<DieseasModel>;
     async fn get_diseases(&self, id: String) -> Result<DieseasModel>;
     async fn list_diseases(&self, ) -> Result<Vec<DieseasModel>>;
@@ -51,7 +52,7 @@ pub trait DbDiseasesRepositories{
     async fn delete_specialization(&self, id: String) -> Result<()>;
 }
 #[async_trait::async_trait]
-pub trait DbErcRepositories{
+pub trait DbErcRepositories: Send + Sync{
     async fn create_erc(&self, dto: CreateErcDto) -> Result<ErcModel>;
     async fn get_erc(&self, id: String) -> Result<ErcModel>;
     async fn list_erc(&self, ) -> Result<Vec<ErcModel>>;
@@ -59,7 +60,7 @@ pub trait DbErcRepositories{
     async fn delete_erc(&self, id: String) -> Result<()>;
 }
 #[async_trait::async_trait]
-pub trait DbUsersRepositories{
+pub trait DbUsersRepositories: Send + Sync{
     async fn create_user(&self, dto: CreateUserDto) -> Result<UserModel>;
     async fn get_user(&self, id: String) -> Result<UserModel>;
     async fn list_user(&self, ) -> Result<Vec<UserModel>>;

@@ -55,7 +55,7 @@ pub fn app_routes(state: Arc<AppServices>) -> Router{
     ),
     components(
         schemas(
-            DoctorApiDto, PatientApiDto, ClinicApiDto, MedicalHistoriesApiDto, DieseasApiDto, ErcApiDto, UserApiDto, CreateUserApiDto, UpdateUserApiDto, 
+            DoctorApiDto, PatientApiDto, ClinicApiDto, MedicalHistoriesApiDto, DieseasApiDto, ErcApiDto, UserApiDto,
         )
     )
 )]

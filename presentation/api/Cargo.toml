@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.89"
-axum = "0.7.6"
+axum = { version = "0.7.6", features = ["macros"] }
 chrono = "0.4.38"
 dotenv = "0.15.0"
 serde = { version = "1.0.210", features = ["derive"] }
@@ -16,3 +16,4 @@ utoipa-rapidoc = { version = "4.0.0", features = ["axum"] }
 utoipa-swagger-ui = { version = "7.1.0", features = ["axum"] }
 
 domain = { path="../../domain" }
+axum-macros = "0.4.2"
